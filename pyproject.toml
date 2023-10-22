@@ -12,7 +12,7 @@ PySDL2 = "^0.9.16"
 click = "^8.1.7"
 
 [tool.poetry.scripts]
-tedit = "lab.cmd.tedit:main"
+tedit = "lab.tedit:main"
 
 [build-system]
 requires = ["poetry-core"]
