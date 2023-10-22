@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "lab"
+version = "0.1.0"
+description = "a simple repo to test out some ideas... nothing useful to see here"
+authors = ["latrokles <latrokles@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+PySDL2 = "^0.9.16"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
