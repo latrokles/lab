@@ -11,6 +11,12 @@ class Doodle:
         self.win.register_keybd_handler(self.on_keybd)
         self.win.register_mouse_handler(self.on_mouse)
         self.pen = Pen(self.win.screen, Palette.WHITE, 5, 5)
+        self.drawui()
+
+    def drawui(self):
+        self.pen.down()
+        self.pen.line(0, 20, self.w - 4, 20)
+        self.pen.up()
 
     def on_mouse(self, mouse):
         if mouse.l:
