@@ -47,6 +47,8 @@ class MouseDevice:
 
     x: int = 0
     y: int = 0
+    px: int = 0
+    py: int = 0
     l: bool = False
     m: bool = False
     r: bool = False
@@ -256,6 +258,9 @@ class AppRuntime:
             return True, self.mouse
 
         if event.type == sdl2.SDL_MOUSEMOTION:
+            self.mouse.px = self.mouse.x
+            self.mouse.py = self.mouse.y
+
             self.mouse.x = event.motion.x
             self.mouse.y = event.motion.y
             return True, self.mouse

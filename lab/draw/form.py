@@ -41,7 +41,7 @@ class Form:
         pixel_bytes = self.bitmap[_0th:_nth]
         return Color.from_values(pixel_bytes)
 
-    def put_color_at(self, x, y, color) -> None:
+    def put_color_at(self, x, y, color):
         _0th, _nth = self._pixel_bytes_range_at_point(x, y)
         self.bitmap[_0th:_nth] = color.values
 
@@ -65,26 +65,24 @@ class Form:
         self.bitmap = bytearray(self.w * self.h * color.values)
 
     def draw_on(self, medium, x, y, clip_x, clip_y, clip_w, clip_h, rule, fill):
-        # implement using bitblt
-        # bitblt = BitBlt(
-        #     destination=medium,
-        #     source=self,
-        #     fill=fill,
-        #     combination_rule=rule,
-        #     destination_x=x,
-        #     destination_y=y,
-        #     source_x=self.x,
-        #     source_y=self.y,
-        #     extent=(self.w, self.y),
-        #     clip_x=clip_x,
-        #     clip_y=clip_y,
-        #     clip_w=clip_w,
-        #     clip_h=clip_h
-        # )
-        # bitblt.copy_bits()
-        pass
+        BitBlt(
+            destination=medium,
+            source=self,
+            fill=fill,
+            combination_rule=rule,
+            destination_x=x,
+            destination_y=y,
+            source_x=self.x,
+            source_y=self.y,
+            extent=(self.w, self.y),
+            clip_x=clip_x,
+            clip_y=clip_y,
+            clip_w=clip_w,
+            clip_h=clip_h
+        )
+        bitblt.copy_bits()
 
-    def _pixel_bytes_range_at_point(self, x, y) -> tuple[int,int]:
+    def _pixel_bytes_range_at_point(self, x, y):
         x_out_of_bounds = x < 0 or self.w <= x
         y_out_of_bounds = y < 0 or self.h <= y
         if x_out_of_bounds or y_out_of_bounds:

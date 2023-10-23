@@ -1,4 +1,5 @@
 from lab import AppRuntime
+from lab.draw import Palette
 
 
 class Tedit:
@@ -13,6 +14,7 @@ class Tedit:
         print(mouse)
 
     def on_keybd(self, keybd):
+        self.win.screen.bitmap = bytearray(self.w * self.h * Palette.random().values)
         print(keybd)
 
     def launch(self):
