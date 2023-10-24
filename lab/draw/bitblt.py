@@ -105,7 +105,7 @@ class BitBlt:
         if py > px:
             # more horizontal
             p = py // 2
-            for i in range(1, py):
+            for i in range(0, py):
                 self.destination_x += dx
                 p = p - px
                 if p < 0:
@@ -117,7 +117,7 @@ class BitBlt:
         else:
             # more vertical
             p = px // 2
-            for i in range(1, px):
+            for i in range(0, px):
                 self.destination_y += dy
                 p = p - py
                 if p < 0:
