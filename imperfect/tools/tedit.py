@@ -1,5 +1,5 @@
-from lab import AppRuntime
-from lab.draw import Palette
+from imperfect import AppRuntime
+from imperfect.draw import Palette
 
 
 class Tedit:

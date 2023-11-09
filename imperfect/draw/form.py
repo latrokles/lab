@@ -2,7 +2,7 @@ import ctypes
 
 from dataclasses import dataclass
 
-from lab.draw import Color
+from imperfect.draw import Color
 
 class OutOfBoundsError(Exception):
     """Raised when trying to access a location outside a form."""

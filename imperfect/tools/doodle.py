@@ -1,6 +1,6 @@
-from lab import AppRuntime, Mod
-from lab.draw import Palette
-from lab.draw import Pen
+from imperfect import AppRuntime, Mod
+from imperfect.draw import Palette
+from imperfect.draw import Pen
 
 
 class Doodle:

@@ -3,7 +3,7 @@ import sdl2
 from dataclasses import dataclass, field
 from enum import Enum
 
-from lab.draw import Form
+from imperfect.draw import Form
 
 
 class Mod:

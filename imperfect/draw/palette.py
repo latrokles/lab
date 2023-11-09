@@ -1,6 +1,6 @@
 import random
 
-from lab.draw import Color
+from imperfect.draw import Color
 
 
 class Palette:

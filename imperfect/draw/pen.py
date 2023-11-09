@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from lab.draw import BitBlt, CombinationRule, Form
+from imperfect.draw import BitBlt, CombinationRule, Form
 
 
 @dataclass

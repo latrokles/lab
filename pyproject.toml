@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "lab"
+name = "imperfect"
 version = "0.1.0"
-description = "a simple repo to test out some ideas... nothing useful to see here"
-authors = ["latrokles <latrokles@gmail.com>"]
+description = "programming studies and other useless code"
+authors = ["latrokles"]
 license = "MIT"
 readme = "README.md"
 
@@ -12,8 +12,8 @@ PySDL2 = "^0.9.16"
 click = "^8.1.7"
 
 [tool.poetry.scripts]
-doodle = "lab.doodle:main"
-tedit = "lab.tedit:main"
+doodle = "imperfect.tools.doodle:main"
+tedit = "imperfect.tools.tedit:main"
 
 [build-system]
 requires = ["poetry-core"]
