@@ -1,4 +1,4 @@
-from imperfect import AppRuntime, Mod
+from imperfect import DesktopAppRuntime, Mod
 from imperfect.draw import Palette
 from imperfect.draw import Pen
 
@@ -7,7 +7,7 @@ class Doodle:
     def __init__(self, width, height, scale=1):
         self.w = width
         self.h = height
-        self.win = AppRuntime(width, height, scale)
+        self.win = DesktopAppRuntime(width, height, scale)
         self.win.register_keybd_handler(self.on_keybd)
         self.win.register_mouse_handler(self.on_mouse)
         self.pen = Pen(self.win.screen, Palette.WHITE, 2, 2)

@@ -1,1 +1,1 @@
-from .runtime import AppRuntime, Mod
+from .runtime.desktop import DesktopAppRuntime, Mod

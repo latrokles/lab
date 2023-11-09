@@ -93,10 +93,10 @@ class KeyboardDevice:
         return all((self.modifiers[m] == 1) for m in modifiers_to_check)
 
 
-class AppRuntime:
-    """AppRuntime wraps all interaction with the platform's
-    facilities for drawing to the screen and inputs from the
-    mouse and keyboard."""
+class DesktopAppRuntime:
+    """DesktopAppRuntime wraps all interaction with the platform's desktop
+    facilities for drawing to the screen and handling input from the mouse and
+    keyboard."""
 
     def __init__(self, width, height, scale):
         self.w = width * scale
