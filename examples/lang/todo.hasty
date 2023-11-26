@@ -1,0 +1,21 @@
+# TODO figure out imports ?
+
+( Todo < Object | title state='pending' created-on completed-on=nil )
+
+def make-todo | title | = 
+  Todo clone [ title=title created-on=(Datetime now) ] 
+end
+
+defmethod t:Todo complete-on | d:Datetime | =
+  t state= 'done'
+  t complete-on= d
+  t
+end
+
+defmethod t:Todo complete =
+  t complete-on (Datetime now)
+end
+
+defmethod t:Todo all-pending =
+  t find-with-slots [ state='pending' ]
+end
