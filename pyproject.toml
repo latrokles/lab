@@ -12,6 +12,7 @@ PySDL2 = "^0.9.16"
 click = "^8.1.7"
 jinja2 = "^3.1.2"
 nanoid = "^2.0.0"
+watchdog = "^3.0.0"
 
 [tool.poetry.scripts]
 doodle = "imperfect.tools.doodle:main"
