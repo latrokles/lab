@@ -4,7 +4,7 @@ import time
 from pathlib import Path
 from shutil import copytree, rmtree
 
-from imperfect.haste.proto import get_system_image
+from imperfect.haste import bootstrap
 
 
 def setup_test_image(rootdir):
@@ -20,8 +20,7 @@ def setup_test_image(rootdir):
 @pytest.fixture(scope='session')
 def image(request):
     image_pathname = setup_test_image(request.config.rootdir)
-    image = get_system_image(image_pathname)
-    image.restore()
+    image = bootstrap(image_pathname)
     yield image
     rmtree(image_pathname)
 
@@ -34,7 +33,7 @@ def test_restore(image):
 
 
 def test_create_new_objects(image):
-    Book = image.object.clone('Book', title=None, author=None)
+    Book = image.object.clone('Book', title='', author='')
     mindstorms = Book.clone(title='Mindstorms', author='Seymour Papert')
     mindstorms.set_slot('year', '1980')
     demian = Book.clone(title='Demian', author='Herman Hesse')

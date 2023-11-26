@@ -1,1 +1,0 @@
-{"tag": "Person", "uid": "8sN-Cfs8o-7OFRszrsMz5", "protos": ["Object-1", "Person-UM4SvVlTPvcDvgLsmRH-3"], "slots": {"name": "bob", "age": 25, "pets": ["PROTOREF#:Pet-ACwyfkLAUvRhZvGck4XSa"]}}
