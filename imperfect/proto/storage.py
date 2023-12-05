@@ -41,7 +41,7 @@ class FileStore:
         return matching
 
     def __repr__(self):
-        return f'( Primitive:FileStore | db={self.db} )'
+        return f'( Primitive:FileStore | db={self.root_path} )'
 
     def __str__(self):
         return self.__repr__()

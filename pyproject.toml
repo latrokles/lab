@@ -17,6 +17,7 @@ watchdog = "^3.0.0"
 [tool.poetry.scripts]
 doodle = "imperfect.tools.doodle:main"
 tedit = "imperfect.tools.tedit:main"
+proto = "imperfect.proto.listener:start_listener"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"

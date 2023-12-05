@@ -1,0 +1,47 @@
+
+# comments
+"docstrings are double quoted strings and can be placed anywhere."
+
+"primitives are the standard python built in primitives"
+
+'strings are single quoted'
+2_000
+-3.14
+
+"lists"
+
+"tuples"
+
+"dictionaries"
+
+"sets"
+
+"Objects are prototypes, that is new objects can be creating by cloning an existing object like:
+
+```
+Vector-2d= (Object clone)
+Vector-2d x= ''  # TODO use nil?
+Vector-2d y= ''
+```
+
+or using the object literal syntax literal 
+
+```
+( Vector-2d < Object | x y )
+```
+"
+
+"all values in hasty can receive messages, messages are defined thus"
+
+defmessage lhs + rhs ;
+
+"The above defines a message **+** with a receiver **lhs** and argument **rhs**.
+
+Messages can be any unicode string.
+
+A method is the piece of code that will respond to the message. For example:"
+
+defmethod lhs:vector-2d + | rhs:vector-2d | =
+  ( Vector-2d x=((lhs x) + (rhs x)) y=((lhs y) + (rhs y)) )
+end
+  

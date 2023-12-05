@@ -11,6 +11,9 @@ class Scanner:
         self.col = 0
         self.row = 0
 
+    def scan(self):
+        return self.src.split()
+
     def emit_error(self, message):
         pass
 

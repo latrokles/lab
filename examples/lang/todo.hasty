@@ -1,4 +1,10 @@
-# TODO figure out imports ?
+# TODO 
+# - figure out imports
+# - namespaces
+# - conditionals
+# - iteration
+# - recursion
+# - blocks / closures / lambdas
 
 ( Todo < Object | title state='pending' created-on completed-on=nil )
 

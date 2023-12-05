@@ -4,7 +4,7 @@ import time
 from pathlib import Path
 from shutil import copytree, rmtree
 
-from imperfect.haste import bootstrap
+from imperfect.proto import bootstrap
 
 
 def setup_test_image(rootdir):
