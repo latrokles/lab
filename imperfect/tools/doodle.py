@@ -10,7 +10,7 @@ class Doodle:
         self.win = DesktopAppRuntime(width, height, scale)
         self.win.register_keybd_handler(self.on_keybd)
         self.win.register_mouse_handler(self.on_mouse)
-        self.pen = Pen(self.win.screen, Palette.WHITE, 2, 2)
+        self.pen = Pen(self.win.screen, Palette.WHITE, 1, 1)
         self.drawui()
 
     def drawui(self):

@@ -46,16 +46,17 @@ class Form:
         self.bitmap[_0th:_nth] = color.values
 
     def row_bytes(self, x, y, pixel_count):
-        if x + (pixel_count - 1) >= self.w:
-            raise OutOfBoundsError(f'reading beyond bitmap width. start={x}, pixels={pixel_count}, bitmap width={self.w}')
-
         byte_0 = (y * (self.w * self.depth)) + (x * self.depth)
-        byte_n = byte_0 + (self.depth * (pixel_count - 1))
+        byte_n = byte_0 + (self.depth * pixel_count)
         return self.bitmap[byte_0:byte_n]
 
     def put_row_bytes(self, x, y, row_bytes):
-        if x + ((len(row_bytes) - 1) / self.depth) >= self.w:
-            raise OutOfBoundsError(f'writing beyond bitmap width. start={x}, pixel_count={len(row_bytes) / self.depth}')
+        if x + (len(row_bytes) // self.depth) > self.w:
+            pixel_count = len(row_bytes) // self.depth
+            stop = x + pixel_count
+            pixels_to_remove = stop - self.w
+            bytes_to_remove = pixels_to_remove * self.depth
+            row_bytes = row_bytes[:-bytes_to_remove]
 
         byte_0 = (y * (self.w * self.depth)) + (x * self.depth)
         byte_n = byte_0 + len(row_bytes)
@@ -91,3 +92,9 @@ class Form:
         byte_0 = (y * (self.w * self.depth)) + (x * self.depth)
         byte_n = byte_0 + self.depth
         return byte_0, byte_n
+
+    def __str__(self):
+        return f"<Form: {self.x=}, {self.y=}, {self.w=}, {self.h=}, {self.offset_x=}, {self.offset_y=}, {len(self.bitmap)=}>"
+
+    def __repr__(self):
+        return self.__str__()

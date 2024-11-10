@@ -53,11 +53,11 @@ class Pen(BitBlt):
         self.source.fill(self.color)
 
     def scale_down(self, factor):
-        self.source.w /= factor
-        self.width /= factor
+        self.source.w = max(1, self.source.w // factor)
+        self.width = max(1, self.width // factor)
 
-        self.source.h /= factor
-        self.height /= factor
+        self.source.h = factor
+        self.height = factor
 
         self.source.fill(self.color)
 
