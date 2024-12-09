@@ -1,18 +1,16 @@
 
-::Todo[ title status='pending' created-on updated-on ]
+Todo = [
+  :Todo
+  |
+    title := nil .
+    status := 'pending' .
+    created-on := nil .
+    completed-on := nil .
 
-method t: Todo initialize = [
-  (t created-on is: nil) if-true: [t created-on = (Datetime now)].
+    complete     := [ || completed-on<< ( Datetime now ) ]
+    list-done    := [ || find-with-slots: [| 'status' -> 'done' |]. ].
+    list-pending := [ || find-with-slots: [| 'status' -> 'pending' |]. ].
+  |
+
+  created-on equals: nil if-true: [[ created-on<< (Datetime now). ]].
 ]
-
-method t: Todo complete-on | dt: Datetime | = [
-  t status = 'done'.
-  t updated-on = dt.
-]
-
-method t: Todo complete    = [t complete-on: (Datetime now)]
-method t: Todo all-pending = [t find-with-slots: {status='pending'}]
-method t: Todo all-done    = [t find-with-slots: {status='done'}]
-
-t1 = ::Todo clone* title: 'test todo'.
-t1 complete.

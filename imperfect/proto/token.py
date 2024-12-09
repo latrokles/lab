@@ -16,6 +16,7 @@ class TokenKind(enum.Enum):
     DOT = enum.auto()
     EQUAL = enum.auto()
     COLON = enum.auto()
+    COLON_EQUALS = enum.auto()
     SEMICOLON = enum.auto()
     EOF = enum.auto()
 
